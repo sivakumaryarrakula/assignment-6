@@ -1,0 +1,196 @@
+##Node.js buffer:
+
+       Buffer class which providesinstances to store
+ raw data similar to an array of integers but 
+Corresponds to a raw memory allocation outside
+the V8 heap.
+#Buffer class is a global class.
+#That can be accessed in an application without
+ importing the buffer module.
+
+#Following is the syntax to create an uninitiated
+ Buffer of 7 octets −
+
+Syntax:
+#var buf = new Buffer(7);
+
+#Using array
+var buf = new Buffer([100, 200, 300, 400, 500])
+#Buffer from a string and optionally encoding.
+
+Syntax:
+var buf = new Buffer("Simply Easy);
+
+#Parameters:
+Here is the description of the parameters used −
+
+string − This is the string data to be written to buffer.
+
+offset − This is the index of the buffer to start writing at.
+ Default value is 0.
+
+length − This is the number of bytes to write. Defaults to buffer.length.
+
+encoding − Encoding to use. 'utf8' is the default encoding.
+
+Example:
+
+Live Demo
+buf = new Buffer(126);
+len = buf.write("Simply Easy Learning");
+
+console.log("Octets written : "+  len);
+When the above program is executed,
+ it produces the following result −
+
+Octets written : 10
+Reading from Buffers
+
+Syntax
+Following is the syntax of the method 
+to read data from a Node Buffer −
+
+buf.toString([encoding])
+Return Value
+This method decodes and returns a string from buffer data encoded using the specified character set encoding.
+Return value
+
+Example
+
+Live Demo
+buf = new Buffer(26);
+for (var i = 0 ; i < 26 ; i++) {
+  buf[i] = i + 97;
+}
+
+console.log( buf.toString('ascii'));       // outputs: abcdefghijklmnopqrstuvwxyz
+console.log( buf.toString('ascii',0,5));   // outputs: abcde
+console.log( buf.toString('utf8',0,5));    // outputs: abcde
+console.log( buf.toString(undefined,0,5)); // encoding defaults to 'utf8', outputs abcde
+When the above program is executed, it produces the following result −
+
+abcdefghijklmnopqrstuvwxyz
+abcde
+abcde
+abcde
+
+##
+Convert Buffer to JSON
+Syntax
+Following is the syntax of the method to convert a Node Buffer into JSON object −
+
+buf.toJSON()
+Return Value
+This method returns a JSON-representation of the Buffer instance.
+
+Example
+Live Demo
+var buf = new Buffer('Simply Easy Learning');
+var json = buf.toJSON(buf);
+
+console.log(json);
+When the above program is executed, it produces the following result −
+
+{ type: 'Buffer',
+   data: 
+   [ 
+      83,
+      105,
+      109,
+      112,
+      108,
+      121,
+      32,
+      69,
+      97,
+      115,
+      121,
+      32,
+      76,
+      101,
+      97,
+      114,
+      110,
+      105,
+      110,
+      103 
+   ]
+}
+
+Concatenate Buffers
+
+Syntax
+
+Buffer.concat(list[, totalLength])
+Parameters
+
+ the parameters used −
+
+list − Array List of Buffer objects to be concatenated.
+
+totalLength − This is the total length of the buffers when concatenated.
+
+Return Value
+This method returns a Buffer instance.
+
+Example
+Live Demo
+var buffer1 = new Buffer('TutorialsPoint ');
+var buffer2 = new Buffer('Simply Easy Learning');
+var buffer3 = Buffer.concat([buffer1,buffer2]);
+
+console.log("buffer3 content: " + buffer3.toString());
+When the above program is executed, it produces the following result −
+
+buffer3 content
+
+##NPM packages:
+
+   A package is a file or directory that is described by a package.json file.
+A package must contain a package.json file in order to be published to the 
+npm registry.
+
+A package is any of the following:
+
+a) A folder containing a program described by a package.json file.
+b) A gzipped tarball containing (a).
+c) A URL that resolves to (b).
+d) A <name>@<version> that is published on the registry with (c).
+e) A <name>@<tag> that points to (d).
+f) A <name> that has a latest tag satisfying (e).
+g) A git url that, when cloned, results in (a).
+
+About modules
+
+A module is any file or directory in the node_modules 
+directory that can be loaded by the Node.js require() function.
+
+To be loaded by the Node.js require() function, a module 
+must be one of the following:
+
+A folder with a package.json file containing a "main" field.
+A folder with an index.js file in it.
+A JavaScript file.
+
+ example
+
+var req = require('request')
+ “The variable req refers to the request module”.
+##File system in node.js:
+The File System module provides a way of working with the computer's file system.
+
+Syntax
+The syntax for including the File System module in your application:
+
+var fs = require('fs');
+
+##File System:
+
+The File System module provides a way of working with the computer's file system.
+
+Syntax
+The syntax for including the File System module in your application:
+
+var fs = require('fs');
+
+##synchronous:
